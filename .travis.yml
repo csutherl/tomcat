@@ -1,0 +1,8 @@
+language: java
+install: ant
+jdk:
+    - openjdk8
+cache:
+    directories:
+        - ${HOME}/deps
+script: ant -Dexecute.validate=false -Dbase.path=${HOME}/deps -Dno.build.dbcp=true download-compile dist-prepare deploy
